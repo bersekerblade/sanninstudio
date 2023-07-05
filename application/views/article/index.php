@@ -1,5 +1,11 @@
 <div class="container">
-    <div class="row mt-4">
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <a href="" class="btn btn-warning">Add Article</a>
+        </div>
+    </div>
+
+    <div class="row mt-3">
         <div class="col-md-6">
             <h6><?= $title; ?></h6>
             <div class="list-group">
