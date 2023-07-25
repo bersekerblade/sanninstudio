@@ -13,6 +13,8 @@ class Article_model extends CI_Model
         $data = [
             "title" => $this->input->post('title', true),
             "slug" => url_title($this->input->post('title'), 'dash', TRUE), // Generate slug title
+            "created_at" => date('Y-m-d H:i:s'),
+            "updated_at" => date('Y-m-d H:i:s'),
             "content" => $this->input->post('content', true)
         ];
 
@@ -35,7 +37,8 @@ class Article_model extends CI_Model
         $data = [
             "title" => $this->input->post('title', true),
             "slug" => url_title($this->input->post('title'), 'dash', TRUE), // Generate slug title
-            "content" => $this->input->post('content', true)
+            "content" => $this->input->post('content', true),
+            "updated_at" => date('Y-m-d H:i:s')
         ];
 
         $this->db->where('id', $this->input->post('id'))->update('tbl_article', $data);
@@ -44,6 +47,6 @@ class Article_model extends CI_Model
     public function searchArticle()
     {
         $keyword = $this->input->post('keyword', true);
-        return $this->db->like('title', $keyword)->get('tbl_article')->result_array();
+        return $this->db->like('title', $keyword)->or_like('slug', $keyword)->get('tbl_article')->result_array();
     }
 }

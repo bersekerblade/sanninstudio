@@ -9,7 +9,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Content</label>
-                    <textarea class="form-control" id="" rows="3" placeholder="Fill Content Here" name="content"></textarea>
+                    <textarea class="form-control" id="trumbowyg" rows="3" placeholder="Fill Content Here" name="content"></textarea>
                     <div class="form-text text-warning"><?= form_error('content') ?></div>
                 </div>
                 <div class="mb-3">
