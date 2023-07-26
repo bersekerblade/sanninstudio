@@ -7,17 +7,22 @@
 <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
+-->
 
-
+<!-- trumbowyg -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
 </script>
-<script src="/assets/trumbowyg/dist/trumbowyg.min.js"></script>
+<script src="/assets/trumbowyg/trumbowyg.min.js"></script>
 <script>
     $('#trumbowyg').trumbowyg();
 </script>
+
+<!-- sweetalert -->
+<script src="/assets/sweetalert/sweetalert2.all.min.js"></script>
+<script src="/assets/sweetalert/myscript.js"></script>
+
 </body>
 
 </html>

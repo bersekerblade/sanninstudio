@@ -1,12 +1,12 @@
 <div class="container">
-
+    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('alert'); ?>"></div>
     <?php if ($this->session->flashdata('alert')) : ?>
-        <div class="row mt-3">
+        <!-- <div class="row mt-3">
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <strong>Holy Added!</strong> <?= $this->session->flashdata('alert'); ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-        </div>
+        </div> -->
     <?php endif; ?>
 
     <div class="row mt-3">
@@ -40,14 +40,20 @@
             <ul class="list-group">
                 <?php foreach ($tbl_article as $data) : ?>
                     <li class="list-group-item">
+                        <?= ++$start; ?>
                         <?= $data['title']; ?>
                         <a href="<?= base_url(); ?>article/detail/<?= $data['id']; ?>" class="badge bg-primary">Detail</a>
                         <a href="<?= base_url(); ?>article/edit/<?= $data['id']; ?>" class="badge bg-warning">Edit</a>
-                        <a href="<?= base_url(); ?>article/delete/<?= $data['id']; ?>" class="badge bg-danger" onclick="return confirm('Sure?');">Delete</a>
+                        <a href="<?= base_url(); ?>article/delete/<?= $data['id']; ?>" class="badge bg-danger delete-button">Delete</a>
 
                     </li>
                 <?php endforeach; ?>
             </ul>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <?= $this->pagination->create_links(); ?>
         </div>
     </div>
 </div>

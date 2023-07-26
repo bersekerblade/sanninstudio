@@ -49,4 +49,14 @@ class Article_model extends CI_Model
         $keyword = $this->input->post('keyword', true);
         return $this->db->like('title', $keyword)->or_like('slug', $keyword)->get('tbl_article')->result_array();
     }
+
+    public function getArticleByPage($limit, $start)
+    {
+        return $this->db->get('tbl_article', $limit, $start)->result_array();
+    }
+
+    public function countAllArticle()
+    {
+        return $this->db->get('tbl_article')->num_rows();
+    }
 }
