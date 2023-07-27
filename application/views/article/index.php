@@ -1,14 +1,5 @@
 <div class="container">
     <div class="flash-data" data-flashdata="<?= $this->session->flashdata('alert'); ?>"></div>
-    <?php if ($this->session->flashdata('alert')) : ?>
-        <!-- <div class="row mt-3">
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Holy Added!</strong> <?= $this->session->flashdata('alert'); ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div> -->
-    <?php endif; ?>
-
     <div class="row mt-3">
         <div class="col-md-6">
             <a href="<?= base_url('article/add') ?>" class="btn btn-warning">Add Article</a>
