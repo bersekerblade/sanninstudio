@@ -13,10 +13,33 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Sannin Studio | Login Page';
-        $this->load->view('templates/auth_header', $data);
-        $this->load->view('auth/login');
-        $this->load->view('templates/auth_footer');
+
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Sannin Studio | Login Page';
+            $this->load->view('templates/auth_header', $data);
+            $this->load->view('auth/login');
+            $this->load->view('templates/auth_footer');
+        } else {
+            $this->_login();
+        }
+    }
+
+    private function _login()
+    {
+
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+
+        $user = $this->db->get_where('tbl_user', ['email' => $email])->row_array();
+
+        if ($user) {
+            //ok
+        } else {
+            $this->session->set_flashdata('alert', 'Email is not registered');
+            redirect('auth');
+        }
     }
 
     public function registration()
@@ -35,6 +58,7 @@ class Auth extends CI_Controller
             ]
 
         );
+
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
         if ($this->form_validation->run() == false) {
