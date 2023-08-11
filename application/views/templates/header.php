@@ -25,7 +25,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="<?= base_url(); ?>article">Article</a>
+                    <a class="nav-link" aria-current="page" href="<?= base_url('article'); ?>">Article</a>
+                    <a class="nav-link" aria-current="page" href="#">Hello <?= $user['name']; ?></a>
+                    <a class="nav-link" aria-current="page" href="<?= base_url('auth/logout'); ?>">Logout</a>
                 </div>
             </div>
         </div>

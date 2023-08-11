@@ -15,6 +15,7 @@ class Article extends CI_Controller
     {
 
         $data['page_title'] = 'Article';
+        $data['user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
 
         //load
         $this->load->library('pagination');

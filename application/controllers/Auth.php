@@ -34,8 +34,26 @@ class Auth extends CI_Controller
 
         $user = $this->db->get_where('tbl_user', ['email' => $email])->row_array();
 
+        //if user already exist
         if ($user) {
-            //ok
+            //if user account already activated
+            if ($user['is_active'] == 1) {
+                //password check match or not
+                if (password_verify($password, $user['password'])) {
+                    $data = [
+                        'email' => $user['email'],
+                        'password' => $user['password']
+                    ];
+                    $this->session->set_userdata($data);
+                    redirect('article');
+                } else {
+                    $this->session->set_flashdata('alert', 'Password not correct');
+                    redirect('auth');
+                }
+            } else {
+                $this->session->set_flashdata('alert', 'Email is not activated');
+                redirect('auth');
+            }
         } else {
             $this->session->set_flashdata('alert', 'Email is not registered');
             redirect('auth');
@@ -71,5 +89,14 @@ class Auth extends CI_Controller
             $this->session->set_flashdata('alert', 'Register Success');
             redirect('auth');
         }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+
+        $this->session->set_flashdata('alert', 'You have been logout');
+        redirect('auth');
     }
 }
