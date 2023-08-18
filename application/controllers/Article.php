@@ -63,18 +63,27 @@ class Article extends CI_Controller
         if ($this->input->post('keyword')) {
             $data['tbl_article'] = $this->Article_model->searchArticle();
         }
+
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
         $this->load->view('article/index', $data);
         $this->load->view('templates/footer');
     }
 
     public function add()
     {
+
+        $data['page_title'] = 'Article';
+        $data['user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
+
         $data['page_title'] = 'Add Article';
         $this->form_validation->set_rules('title', 'Title Article', 'required');
         $this->form_validation->set_rules('content', 'Content Article', 'required');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
             $this->load->view('article/add');
             $this->load->view('templates/footer');
         } else {

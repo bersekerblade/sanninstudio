@@ -45,7 +45,7 @@ class Auth extends CI_Controller
                         'password' => $user['password']
                     ];
                     $this->session->set_userdata($data);
-                    redirect('article');
+                    redirect('user');
                 } else {
                     $this->session->set_flashdata('alert', 'Password not correct');
                     redirect('auth');

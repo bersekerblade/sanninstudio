@@ -1,28 +1,67 @@
-<!-- Optional JavaScript; choose one of the two! -->
+   <!-- Footer -->
+   <footer class="sticky-footer bg-white">
+       <div class="container my-auto">
+           <div class="copyright text-center my-auto">
+               <span>Copyright &copy; Sannin Studio <?= date('Y'); ?></span>
+           </div>
+       </div>
+   </footer>
+   <!-- End of Footer -->
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   </div>
+   <!-- End of Content Wrapper -->
 
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
--->
+   </div>
+   <!-- End of Page Wrapper -->
 
-<!-- trumbowyg -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
-</script>
-<script src="/assets/trumbowyg/trumbowyg.min.js"></script>
-<script>
-    $('#trumbowyg').trumbowyg();
-</script>
+   <!-- Scroll to Top Button-->
+   <a class="scroll-to-top rounded" href="#page-top">
+       <i class="fas fa-angle-up"></i>
+   </a>
 
-<!-- sweetalert -->
-<script src="/assets/sweetalert/sweetalert2.all.min.js"></script>
-<script src="/assets/sweetalert/myscript.js"></script>
+   <!-- Logout Modal-->
+   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">×</span>
+                   </button>
+               </div>
+               <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+               <div class="modal-footer">
+                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                   <a class="btn btn-primary" href="<?= base_url('auth/logout'); ?>">Logout</a>
+               </div>
+           </div>
+       </div>
+   </div>
 
-</body>
+   <!-- Bootstrap core JavaScript-->
+   <script src="<?= base_url('assets/sbadmin2/'); ?>vendor/jquery/jquery.min.js"></script>
+   <script src="<?= base_url('assets/sbadmin2/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</html>
+   <!-- Core plugin JavaScript-->
+   <script src="<?= base_url('assets/sbadmin2/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+
+   <!-- Custom scripts for all pages-->
+   <script src="<?= base_url('assets/sbadmin2/'); ?>js/sb-admin-2.min.js"></script>
+
+   <!-- trumbowyg -->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script>
+       window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+   </script>
+   <script src="/assets/trumbowyg/trumbowyg.min.js"></script>
+   <script>
+       $('#trumbowyg').trumbowyg();
+   </script>
+
+   <!-- sweetalert -->
+   <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>
+   <script src="/assets/sweetalert/myscript.js"></script>
+
+   </body>
+
+   </html>
