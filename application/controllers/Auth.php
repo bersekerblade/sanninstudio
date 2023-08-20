@@ -42,10 +42,16 @@ class Auth extends CI_Controller
                 if (password_verify($password, $user['password'])) {
                     $data = [
                         'email' => $user['email'],
-                        'password' => $user['password']
+                        'role_id' => $user['role_id']
                     ];
+
                     $this->session->set_userdata($data);
-                    redirect('user');
+
+                    if ($user['role_id'] == 1) {
+                        redirect('admin');
+                    } else {
+                        redirect('user');
+                    }
                 } else {
                     $this->session->set_flashdata('alert', 'Password not correct');
                     redirect('auth');
