@@ -60,7 +60,7 @@ class Article extends CI_Controller
         $data['start'] = $this->uri->segment(3);
         $data['tbl_article'] = $this->Article_model->getArticleByPage($config['per_page'], $data['start']);
 
-        if ($this->input->post('keyword')) {
+        if ($this->input->get_post('keyword')) {
             $data['tbl_article'] = $this->Article_model->searchArticle();
         }
 

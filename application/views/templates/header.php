@@ -23,6 +23,7 @@
     <!-- Load Trumbowyg CSS -->
     <link rel="stylesheet" href="/assets/trumbowyg/ui/trumbowyg.min.css">
 
+
 </head>
 
 <body id="page-top">

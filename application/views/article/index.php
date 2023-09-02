@@ -19,7 +19,7 @@
 
                 <div class="row mt-3">
                     <div class="col-md-6">
-                        <form action="" method="post">
+                        <form action="" method="get">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Search..." name="keyword">
                                 <button class="btn btn-outline-secondary" type="submit">Search</button>

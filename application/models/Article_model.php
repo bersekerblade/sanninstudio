@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Article_model extends CI_Model
 {
@@ -46,7 +47,7 @@ class Article_model extends CI_Model
 
     public function searchArticle()
     {
-        $keyword = $this->input->post('keyword', true);
+        $keyword = $this->input->get_post('keyword', true);
         return $this->db->like('title', $keyword)->or_like('slug', $keyword)->get('tbl_article')->result_array();
     }
 
