@@ -85,9 +85,15 @@
                             <?php foreach ($subMenu as $sm) :  ?>
 
                                 <?php if ($page_title == $sm['title']) : ?>
-                                    <a class="collapse-item active" href="<?= $sm['url']; ?>"><?= $sm['title']; ?></a>
+                                    <a class="collapse-item active" href="<?= $sm['url']; ?>">
+                                        <i class="<?= $sm['icon']; ?>"></i>
+                                        <span><?= $sm['title']; ?></span></a>
+                                    </a>
                                 <?php else : ?>
-                                    <a class="collapse-item" href="<?= $sm['url']; ?>"><?= $sm['title']; ?></a>
+                                    <a class="collapse-item" href="<?= $sm['url']; ?>">
+                                        <i class="<?= $sm['icon']; ?>"></i>
+                                        <span><?= $sm['title']; ?></span></a>
+                                    </a>
                                 <?php endif; ?>
 
                             <?php endforeach; ?>
