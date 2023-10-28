@@ -105,4 +105,9 @@ class Auth extends CI_Controller
         $this->session->set_flashdata('alert', 'You have been logout');
         redirect('auth');
     }
+
+    public function blocked()
+    {
+        $this->load->view('auth/blocked');
+    }
 }
