@@ -29,7 +29,7 @@
     <!-- Looping Menu -->
     <?php foreach ($menu as $m) :  ?>
         <div class="sidebar-heading">
-            <?php if ($role_id == 1) { ?>
+            <?php if ($role_id) { ?>
                 <?= $m['menu']; ?>
             <?php }; ?>
         </div>
@@ -85,12 +85,12 @@
                             <?php foreach ($subMenu as $sm) :  ?>
 
                                 <?php if ($page_title == $sm['title']) : ?>
-                                    <a class="collapse-item active" href="<?= $sm['url']; ?>">
+                                    <a class="collapse-item active" href="<?= base_url($sm['url']); ?>">
                                         <i class="<?= $sm['icon']; ?>"></i>
                                         <span><?= $sm['title']; ?></span></a>
                                     </a>
                                 <?php else : ?>
-                                    <a class="collapse-item" href="<?= $sm['url']; ?>">
+                                    <a class="collapse-item" href="<?= base_url($sm['url']); ?>">
                                         <i class="<?= $sm['icon']; ?>"></i>
                                         <span><?= $sm['title']; ?></span></a>
                                     </a>
