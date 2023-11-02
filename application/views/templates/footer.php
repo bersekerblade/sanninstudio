@@ -62,8 +62,32 @@
    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>
    <script src="/assets/sweetalert/myscript.js"></script>
 
-   <!-- jquery check_access -->
+
    <script>
+       //preview image
+       function previewImg() {
+           let image = document.querySelector('#image');
+           let imageLabel = document.querySelector('.custom-file-label');
+           let imgPreview = document.querySelector('.img-preview');
+
+           imageLabel.textContent = image.files[0].name;
+
+           let fileImage = new FileReader();
+           fileImage.readAsDataURL(image.files[0]);
+
+           fileImage.onload = function(e) {
+               imgPreview.src = e.target.result;
+           }
+       }
+
+
+       // show upload file name
+       $('.custom-file-input').on('change', function() {
+           let fileName = $(this).val().split('\\').pop();
+           $(this).next('.custom-file-label').addClass("selected").html(fileName);
+       });
+
+       // jquery check_access
        $('.form-check-input').on('click', function() {
            const menuId = $(this).data('menu');
            const roleId = $(this).data('role');

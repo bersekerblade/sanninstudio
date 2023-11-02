@@ -8,6 +8,9 @@
         </div>
         <div class="card-body">
             <!-- S Page body -->
+            <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
+            <div class="flash-data" data-flashdata="<?= $this->session->flashdata('alert'); ?>"></div>
+
             <div class="card">
                 <div class="row no-gutters">
                     <div class="col-md-12">
