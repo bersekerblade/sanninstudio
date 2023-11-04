@@ -117,16 +117,16 @@ class Auth extends CI_Controller
             ];
 
             $this->db->insert('tbl_user', $data);
-            $this->db->insert('tbl_user_token', $token);
+            $this->db->insert('tbl_user_token', $user_token);
 
-            $this->_sendEmail();
+            $this->_sendEmail($token, 'verify');
 
-            $this->session->set_flashdata('alert', 'Register Success');
+            $this->session->set_flashdata('alert', 'Register Success, please check ur email to activation');
             redirect('auth');
         }
     }
 
-    private function _sendEmail()
+    private function _sendEmail($token, $type)
     {
         $config = [
             'protocol'  => 'smtp',
@@ -143,15 +143,61 @@ class Auth extends CI_Controller
         $this->email->initialize($config);
 
         $this->email->from('sanninstudiodev@gmail.com', 'Sannin Studio');
-        $this->email->to('diponegoro.prince15@gmail.com');
-        $this->email->subject('Test');
-        $this->email->message('Hello World');
+        $this->email->to($this->input->post('email'));
+
+        if ($type == 'verify') {
+            $this->email->subject('Account Verification');
+            $this->email->message('Click this link to verifu account: 
+                <a href="' . base_url() . 'auth/verify?email=' . $this->input->post('email') .
+                '&token=' . urlencode($token) . '">Activate</a>');
+        }
+
 
         if ($this->email->send()) {
             return true;
         } else {
             echo $this->email->print_debugger();
             die;
+        }
+    }
+
+    public function verify()
+    {
+        $email = $this->input->get('email');
+        $token = $this->input->get('token');
+
+        $user = $this->db->get_where('tbl_user', ['email' => $email])->row_array();
+
+        if ($user) {
+
+            $user_token = $this->db->get_where('tbl_user_token', ['token' => $token])->row_array();
+
+            if ($user_token) {
+
+                if (time() - $user_token['date_created'] < (60 * 60 * 24)) {
+
+                    $this->db->set('is_active', 1);
+                    $this->db->where('email', $email);
+                    $this->db->update('tbl_user');
+
+                    $this->db->delete('tbl_user_token', ['email' => $email]);
+
+                    $this->session->set_flashdata('alert', 'activated success, u can login now!');
+                    redirect('auth');
+                } else {
+                    $this->db->delete('tbl_user', ['email' => $email]);
+                    $this->db->delete('tbl_user_token', ['email' => $email]);
+
+                    $this->session->set_flashdata('alert', 'token expired, you must activate before 24 hours! activate failed');
+                    redirect('auth');
+                }
+            } else {
+                $this->session->set_flashdata('alert', 'wrong token! activate failed');
+                redirect('auth');
+            }
+        } else {
+            $this->session->set_flashdata('alert', 'wrong email! activate failed');
+            redirect('auth');
         }
     }
 
