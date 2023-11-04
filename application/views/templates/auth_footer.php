@@ -1,6 +1,6 @@
 <!-- Bootstrap core JavaScript-->
 <script src="<?= base_url('assets/sbadmin2/'); ?>vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= base_url('assets/sbadmin2/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
 <script src="<?= base_url('assets/sbadmin2/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>

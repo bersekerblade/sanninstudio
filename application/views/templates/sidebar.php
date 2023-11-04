@@ -79,12 +79,20 @@
                         <span>Menu</span>
                     </a>
 
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <?php
+                    $show_drop = '';
+                    foreach ($subMenu as $sm) {
+                        if (trim($page_title) == trim($sm['title'])) {
+                            $show_drop = 'show';
+                        }
+                    }
+                    ?>
+
+                    <div id="collapseTwo" class="collapse <?= $show_drop ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Menu:</h6>
                             <?php foreach ($subMenu as $sm) :  ?>
-
-                                <?php if ($page_title == $sm['title']) : ?>
+                                <?php if (trim($page_title) == trim($sm['title'])) : ?>
                                     <a class="collapse-item active" href="<?= base_url($sm['url']); ?>">
                                         <i class="<?= $sm['icon']; ?>"></i>
                                         <span><?= $sm['title']; ?></span></a>

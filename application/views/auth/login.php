@@ -1,6 +1,7 @@
 <div class="container">
     <!-- flashdata sweetalert -->
     <div class="flash-data" data-flashdata="<?= $this->session->flashdata('alert'); ?>"></div>
+    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('alert'); ?>"></div>
     <!-- Outer Row -->
     <div class="row justify-content-center">
 

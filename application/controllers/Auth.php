@@ -7,7 +7,6 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Auth_model');
         $this->load->library('form_validation');
     }
 
@@ -98,9 +97,61 @@ class Auth extends CI_Controller
             $this->load->view('auth/registration');
             $this->load->view('templates/auth_footer');
         } else {
-            $this->Auth_model->addRegistration();
+            $email = $this->input->post('email', true);
+            $data = [
+                "name" => htmlspecialchars($this->input->post('name', true)),
+                "email" => htmlspecialchars($email),
+                "image" => 'default.jpg',
+                "password" => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
+                "role_id" => 2,
+                "is_active" => 0,
+                "date_created" => time()
+            ];
+
+            // set token
+            $token = base64_encode(random_bytes(32));
+            $user_token = [
+                'email' => $email,
+                'token' => $token,
+                'date_created' => time()
+            ];
+
+            $this->db->insert('tbl_user', $data);
+            $this->db->insert('tbl_user_token', $token);
+
+            $this->_sendEmail();
+
             $this->session->set_flashdata('alert', 'Register Success');
             redirect('auth');
+        }
+    }
+
+    private function _sendEmail()
+    {
+        $config = [
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'sanninstudiodev@gmail.com',
+            'smtp_pass' => 'huhc lbyh vcou zykn',
+            'smtp_port' => 465,
+            'mailtype' => 'html',
+            'charset'  => 'utf-8',
+            'newline'  => "\r\n"
+        ];
+
+        $this->load->library('email', $config);
+        $this->email->initialize($config);
+
+        $this->email->from('sanninstudiodev@gmail.com', 'Sannin Studio');
+        $this->email->to('diponegoro.prince15@gmail.com');
+        $this->email->subject('Test');
+        $this->email->message('Hello World');
+
+        if ($this->email->send()) {
+            return true;
+        } else {
+            echo $this->email->print_debugger();
+            die;
         }
     }
 
