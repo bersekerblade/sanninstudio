@@ -12113,6 +12113,12 @@ a:focus {
     background-size: cover
 }
 
+.bg-forgot-image {
+    background: url('/assets/img/forgot-password.jpg');
+    background-position: center;
+    background-size: cover
+}
+
 .bg-password-image {
     background: url(https://source.unsplash.com/oWTW-jNGl9I/600x800);
     background-position: center;

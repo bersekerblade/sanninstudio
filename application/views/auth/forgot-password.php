@@ -1,6 +1,4 @@
 <div class="container">
-    <!-- flashdata sweetalert -->
-    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('alert'); ?>"></div>
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
@@ -10,32 +8,27 @@
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6 d-none d-lg-block bg-forgot-image"></div>
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    <h1 class="h4 text-gray-900 mb-4">Forgot Your Password?</h1>
                                 </div>
+
                                 <?= $this->session->flashdata('message'); ?>
-                                <form class="user" method="post" action="<?= base_url('auth'); ?>">
+
+                                <form class="user" method="post" action="<?= base_url('auth/forgotpassword'); ?>">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" id="email" placeholder="Enter Email Address..." name="email" value="<?= set_value('email'); ?>">
                                         <?= form_error('email', ' <small class="text-danger pl-4">', '</small>'); ?>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="password" placeholder="Password" name="password">
-                                        <?= form_error('password', ' <small class="text-danger pl-4">', '</small>'); ?>
-                                    </div>
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
-                                        Login
+                                        Reset Password
                                     </button>
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="<?= base_url('auth/forgotpassword'); ?>">Forgot Password?</a>
-                                </div>
-                                <div class="text-center">
-                                    <a class="small" href="<?= base_url('auth/registration'); ?>">Create an Account!</a>
+                                    <a class="small" href="<?= base_url('auth'); ?>">Back to Login!</a>
                                 </div>
                             </div>
                         </div>
