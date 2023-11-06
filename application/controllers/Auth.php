@@ -56,15 +56,15 @@ class Auth extends CI_Controller
                         redirect('user');
                     }
                 } else {
-                    $this->session->set_flashdata('alert', 'Password not correct');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password is not correct!</div>');
                     redirect('auth');
                 }
             } else {
-                $this->session->set_flashdata('alert', 'Email is not activated');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Emai is not activated yet!</div>');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('alert', 'Email is not registered');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Emai is not registered!</div>');
             redirect('auth');
         }
     }
