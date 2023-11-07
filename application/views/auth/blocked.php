@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - 404</title>
+    <title>Sannin Studio 403 Forbidden</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/sbadmin2/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

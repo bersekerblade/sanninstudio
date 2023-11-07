@@ -48,14 +48,39 @@
    <!-- Custom scripts for all pages-->
    <script src="<?= base_url('assets/sbadmin2/'); ?>js/sb-admin-2.min.js"></script>
 
+
    <!-- trumbowyg -->
    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script>
        window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
    </script>
    <script src="/assets/trumbowyg/trumbowyg.min.js"></script>
+   <!-- Import Trumbowyg plugins... -->
+   <script src="/assets/trumbowyg/plugins/base64/trumbowyg.base64.min.js"></script>
    <script>
-       $('#trumbowyg').trumbowyg();
+       $('#text-editor').trumbowyg({
+           btnsDef: {
+               // Create a new dropdown
+               image: {
+                   dropdown: ['insertImage', 'base64'],
+                   ico: 'insertImage'
+               }
+           },
+           // Redefine the button pane
+           btns: [
+               ['viewHTML'],
+               ['formatting'],
+               ['strong', 'em', 'del'],
+               ['superscript', 'subscript'],
+               ['link'],
+               ['image'], // Our fresh created dropdown
+               ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+               ['unorderedList', 'orderedList'],
+               ['horizontalRule'],
+               ['removeformat'],
+               ['fullscreen'],
+           ]
+       });
    </script>
 
    <!-- sweetalert -->
