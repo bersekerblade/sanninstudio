@@ -3,33 +3,34 @@
 
     <!-- Page Heading -->
     <div class="card shadow border-left-warning">
-        <div class="card-header py-3">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-secondary"><?= $page_title; ?></h6>
+            <a href="<?= base_url('article/add') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <i class="fas fa-feather fa-sm text-white-50"></i>
+                Add Article</a>
         </div>
         <div class="card-body">
             <!-- S Page body -->
 
             <div class="container">
                 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('alert'); ?>"></div>
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <a href="<?= base_url('article/add') ?>" class="btn btn-warning">Add Article</a>
-                    </div>
-                </div>
 
-                <div class="row mt-3">
-                    <div class="col-md-6">
+                <!-- Search -->
+                <div class="row mt-1">
+                    <div class="col-md-4">
                         <form action="" method="get">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Search..." name="keyword">
-                                <button class="btn btn-outline-secondary" type="submit">Search</button>
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm" name="keyword" placeholder="search article" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary btn-sm" id="basic-addon2"><i class="fas fa-swimmer fa-sm text-white-50"></i></button>
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
 
                 <div class="row mt-3">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <h6><?= $page_title; ?></h6>
                         <?php if (empty($tbl_article)) : ?>
                             <div class="row mt-3">

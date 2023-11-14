@@ -131,4 +131,20 @@ class Article extends CI_Controller
             redirect('article');
         }
     }
+
+    // public function save_base64_image()
+    // {
+    //     $image_base64 = $this->input->post('content'); // Gantilah 'image_base64' dengan nama input yang sesuai
+    //     $decoded_image = base64_decode($image_base64);
+
+    //     // Simpan gambar dalam folder assets atau tempat yang Anda inginkan
+    //     $image_filename = uniqid() . '.png'; // Nama file gambar yang dihasilkan secara acak
+    //     $image_path = './assets/img/article/' . $image_filename; // Sesuaikan dengan path folder penyimpanan gambar
+
+    //     file_put_contents($image_path, $decoded_image);
+
+    //     // Kembalikan URL gambar yang diunggah dalam respons JSON
+    //     $image_url = base_url('assets/img/article/' . $image_filename);
+    //     echo json_encode(['url' => $image_url]);
+    // }
 }

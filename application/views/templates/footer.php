@@ -55,8 +55,10 @@
        window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
    </script>
    <script src="/assets/trumbowyg/trumbowyg.min.js"></script>
-   <!-- Import Trumbowyg plugins... -->
+   <!-- Import all plugins you want AFTER importing jQuery and Trumbowyg -->
    <script src="/assets/trumbowyg/plugins/base64/trumbowyg.base64.min.js"></script>
+   <!-- Import Trumbowyg history JS at the end of <body>... -->
+   <script src="/assets/trumbowyg/plugins/history/trumbowyg.history.min.js"></script>
    <script>
        $('#text-editor').trumbowyg({
            btnsDef: {
@@ -68,18 +70,29 @@
            },
            // Redefine the button pane
            btns: [
-               ['viewHTML'],
-               ['formatting'],
+               ['historyUndo', 'historyRedo'],
                ['strong', 'em', 'del'],
-               ['superscript', 'subscript'],
-               ['link'],
                ['image'], // Our fresh created dropdown
                ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
                ['unorderedList', 'orderedList'],
                ['horizontalRule'],
                ['removeformat'],
-               ['fullscreen'],
+               ['fullscreen']
            ]
+
+           //    plugins: {
+           //        upload: {
+           //            serverPath: '/article/save_base64_image', // Ganti dengan URL endpoint di CodeIgniter Anda
+           //            fileFieldName: 'content',
+           //            success: function(data) {
+           //                // Handle successful upload (jika diperlukan)
+           //            },
+           //            error: function(data) {
+           //                // Handle upload error (jika diperlukan)
+           //            }
+           //        }
+           //    }
+
        });
    </script>
 
