@@ -45,9 +45,9 @@
                                 <li class="list-group-item">
                                     <?= ++$start; ?>
                                     <?= $data['title']; ?>
-                                    <a href="<?= base_url(); ?>article/detail/<?= $data['id']; ?>" class="badge bg-primary">Detail</a>
-                                    <a href="<?= base_url(); ?>article/edit/<?= $data['id']; ?>" class="badge bg-warning">Edit</a>
-                                    <a href="<?= base_url(); ?>article/delete/<?= $data['id']; ?>" class="badge bg-danger delete-button">Delete</a>
+                                    <a href="<?= base_url(); ?>article/detail/<?= $data['id']; ?>" class="btn btn-success btn-circle btn-sm"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url(); ?>article/edit/<?= $data['id']; ?>" class="btn-circle btn-sm"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url(); ?>article/delete/<?= $data['id']; ?>" class="btn-circle btn-sm"><i class="fas fa-edit"></i></a>
 
                                 </li>
                             <?php endforeach; ?>
