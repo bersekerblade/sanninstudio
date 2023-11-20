@@ -25,7 +25,7 @@ class Article extends CI_Controller
         //config
         $config['base_url'] = 'http://sanninstudio.test/article/index';
         $config['total_rows'] = $this->Article_model->countAllArticle();
-        $config['per_page'] = 10;
+        $config['per_page'] = 4;
         $config['num_links'] = 5;
 
         //styling pagination

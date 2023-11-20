@@ -14,11 +14,12 @@
 
             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
             <div class="flash-data" data-flashdata="<?= $this->session->flashdata('alert'); ?>"></div>
+            <!-- start card -->
             <div class="card col-md-12 p-0">
                 <div class="row no-gutters">
                     <div class="col-md-12">
                         <div class="card-body p-0 m-0">
-                            <!-- end card -->
+                            <!-- end start card -->
 
                             <table class="table table-hover table-borderless">
                                 <thead class="table-warning">

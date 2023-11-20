@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('alert'); ?>"></div>
 
-                <!-- Search -->
+                <!-- start Search -->
                 <div class="row mt-1">
                     <div class="col-md-4">
                         <form action="" method="get">
@@ -31,29 +31,54 @@
 
                 <div class="row mt-3">
                     <div class="col-md-12">
-                        <h6><?= $page_title; ?></h6>
                         <?php if (empty($tbl_article)) : ?>
-                            <div class="row mt-3">
+                            <div class="row mt-0 col-md-12">
                                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                     Data Not Found!
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <ul class="list-group">
-                            <?php foreach ($tbl_article as $data) : ?>
-                                <li class="list-group-item">
-                                    <?= ++$start; ?>
-                                    <?= $data['title']; ?>
-                                    <a href="<?= base_url(); ?>article/detail/<?= $data['id']; ?>" class="btn btn-success btn-circle btn-sm"><i class="fas fa-edit"></i></a>
-                                    <a href="<?= base_url(); ?>article/edit/<?= $data['id']; ?>" class="btn-circle btn-sm"><i class="fas fa-edit"></i></a>
-                                    <a href="<?= base_url(); ?>article/delete/<?= $data['id']; ?>" class="btn-circle btn-sm"><i class="fas fa-edit"></i></a>
-
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
                     </div>
                 </div>
+
+                <!-- start card -->
+                <div class="card col-md-12 p-0">
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+                            <div class="card-body p-0 m-0">
+                                <!-- end start card -->
+
+                                <!-- start table -->
+                                <table class="table table-hover table-borderless">
+                                    <thead class="table-warning">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($tbl_article as $data) : ?>
+                                            <tr>
+                                                <th scope="row"><?= ++$start; ?></th>
+                                                <td><?= $data['title']; ?></td>
+                                                <td>
+                                                    <a href="<?= base_url(); ?>article/detail/<?= $data['id']; ?>" class="btn btn-info btn-circle btn-sm"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?= base_url(); ?>article/edit/<?= $data['id']; ?>" class="btn btn-warning btn-circle btn-sm"><i class="fas fa-eye"></i></a>
+                                                    <a href="<?= base_url(); ?>article/delete/<?= $data['id']; ?>" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                                <!-- end table  -->
+                                <!-- start end card -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end end card -->
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <?= $this->pagination->create_links(); ?>
