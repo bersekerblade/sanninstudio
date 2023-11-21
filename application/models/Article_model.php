@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Article_model extends CI_Model
 {
+
     public function getAllArticle()
     {
         return $this->db->get('tbl_article')->result_array();
@@ -11,12 +12,15 @@ class Article_model extends CI_Model
     public function addArticle()
     {
 
+        $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
+
         $data = [
             "title" => $this->input->post('title', true),
             "slug" => url_title($this->input->post('title'), 'dash', TRUE), // Generate slug title
             "created_at" => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s'),
-            "content" => $this->input->post('content', true)
+            "content" => $this->input->post('content', true),
+            "user_id" => $user['id']
         ];
 
         $this->db->insert('tbl_article', $data);
@@ -53,11 +57,19 @@ class Article_model extends CI_Model
 
     public function getArticleByPage($limit, $start)
     {
-        return $this->db->get('tbl_article', $limit, $start)->result_array();
+        $data['user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
+
+        return $this->db->get_where('tbl_article', ['user_id' => $data['user']['id']], $limit, $start)->result_array();
+
+        //return $this->db->get('tbl_article', $limit, $start)->result_array();
     }
 
     public function countAllArticle()
     {
-        return $this->db->get('tbl_article')->num_rows();
+
+        $data['user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
+
+        return $this->db->get_where('tbl_article', ['user_id' => $data['user']['id']])->num_rows();
+        //return $this->db->get('tbl_article')->num_rows();
     }
 }

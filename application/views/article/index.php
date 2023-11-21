@@ -64,8 +64,8 @@
                                                 <th scope="row"><?= ++$start; ?></th>
                                                 <td><?= $data['title']; ?></td>
                                                 <td>
-                                                    <a href="<?= base_url(); ?>article/detail/<?= $data['id']; ?>" class="btn btn-info btn-circle btn-sm"><i class="fas fa-edit"></i></a>
-                                                    <a href="<?= base_url(); ?>article/edit/<?= $data['id']; ?>" class="btn btn-warning btn-circle btn-sm"><i class="fas fa-eye"></i></a>
+                                                    <a href="<?= base_url(); ?>article/detail/<?= $data['id']; ?>" class="btn btn-info btn-circle btn-sm"><i class="fas fa-eye"></i></a>
+                                                    <a href="<?= base_url(); ?>article/edit/<?= $data['id']; ?>" class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></a>
                                                     <a href="<?= base_url(); ?>article/delete/<?= $data['id']; ?>" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
