@@ -64,6 +64,11 @@ class Article_model extends CI_Model
         //return $this->db->get('tbl_article', $limit, $start)->result_array();
     }
 
+    public function getArticleByPortal($limit, $start)
+    {
+        return $this->db->get('tbl_article', $limit, $start)->result_array();
+    }
+
     public function countAllArticle()
     {
 
@@ -71,5 +76,10 @@ class Article_model extends CI_Model
 
         return $this->db->get_where('tbl_article', ['user_id' => $data['user']['id']])->num_rows();
         //return $this->db->get('tbl_article')->num_rows();
+    }
+
+    public function countAllArticleByPortal()
+    {
+        return $this->db->get('tbl_article')->num_rows();
     }
 }
