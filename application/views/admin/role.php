@@ -35,9 +35,15 @@
                                             <th scope="row"><?= $i; ?></th>
                                             <td><?= $r['role']; ?></td>
                                             <td>
+
                                                 <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="btn btn-warning btn-circle btn-sm" title="Role Access"><i class="fas fa-wrench"></i></a>
-                                                <a href="#" class="btn btn-success btn-circle btn-sm" title="Edit Role"><i class="fas fa-edit"></i></a>
-                                                <a href="#" class="btn btn-danger btn-circle btn-sm" title="Edit Menu"><i class="fas fa-trash"></i></a>
+                                                <?php if ($r['role'] == "Administrator") : ?>
+                                                    <a href="#" class="btn btn-success btn-circle btn-sm disabled" title="Edit Role"><i class="fas fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-danger btn-circle btn-sm disabled" title="Edit Menu"><i class="fas fa-trash"></i></a>
+                                                <?php else : ?>
+                                                    <a href="#" class="btn btn-success btn-circle btn-sm" title="Edit Role"><i class="fas fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-danger btn-circle btn-sm" title="Edit Menu"><i class="fas fa-trash"></i></a>
+                                                <?php endif; ?>
                                             </td>
                                         </tr>
                                     <?php $i++;

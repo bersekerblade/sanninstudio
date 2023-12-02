@@ -33,7 +33,7 @@
                     <div class="col-md-12">
                         <?php if (empty($tbl_article)) : ?>
                             <div class="row mt-0 col-md-12">
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <div class="alert alert-info alert-dismissible fade show" role="alert">
                                     Data Not Found!
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
