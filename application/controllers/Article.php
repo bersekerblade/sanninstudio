@@ -117,12 +117,16 @@ class Article extends CI_Controller
     public function edit($id)
     {
         $data['page_title'] = 'Edit Article';
+        $data['user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
+
         $data['tbl_article'] = $this->Article_model->getArticleById($id);
         $this->form_validation->set_rules('title', 'Title Article', 'required');
         $this->form_validation->set_rules('content', 'Content Article', 'required');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header', $data);
-            $this->load->view('article/edit', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('article/edit');
             $this->load->view('templates/footer');
         } else {
             $this->Article_model->editArticle();
