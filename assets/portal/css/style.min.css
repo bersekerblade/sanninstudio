@@ -10736,9 +10736,9 @@ a.text-default {
 	padding: 30px 0;
 	font-size: 0.75rem;
 	text-align: center;
-	color: #fff;
+	color: black;
 	/* footer bacground note */
-	background: url() top no-repeat #333;
+	background: url("../images/background_dot.png") top no-repeat #fff;
 	background-position-y: -19px;
 	position: relative;
 }
