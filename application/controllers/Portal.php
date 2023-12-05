@@ -66,4 +66,25 @@ class Portal extends CI_Controller
         $this->load->view('portal/portal_side');
         $this->load->view('portal/portal_footer');
     }
+
+    public function detail($id)
+    {
+        $data['page_title'] = 'Berita Terbaru';
+        $data['tbl_article'] = $this->Article_model->getArticleById($id);
+
+        $this->load->view('portal/portal_header');
+        $this->load->view('portal/detail_article', $data);
+        $this->load->view('portal/portal_side');
+        $this->load->view('portal/portal_footer');
+    }
+
+    public function staff()
+    {
+        $data['page_title'] = 'Staff';
+
+        $this->load->view('portal/portal_header');
+        $this->load->view('portal/staff_profile', $data);
+        $this->load->view('portal/portal_side');
+        $this->load->view('portal/portal_footer');
+    }
 }

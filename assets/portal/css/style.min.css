@@ -95,16 +95,7 @@ label,
 output {
 	display: inline-block;
 }
-@import url(//fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,700&subset=japanese); /*!
- * Bootstrap v4.3.0 (https://getbootstrap.com)
- * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-@import url(https://rsms.me/inter/inter.css);
-@import url(https://rsms.me/inter/inter.css);
-@import url(https://rsms.me/inter/inter.css);
-@import url(https://rsms.me/inter/inter.css);
+
 :root {
 	--gray-dark: #343a40;
 	--blue: #0066ff;
@@ -10713,7 +10704,7 @@ a.text-default {
 	font-size: 11px;
 	line-height: 2;
 	margin-right: 6px;
-	padding-right: 1.125rem;
+	/* padding-right: 1.125rem; */
 	position: relative;
 }
 .nav-breadcrumb__item a {
@@ -10730,7 +10721,8 @@ a.text-default {
 	position: absolute;
 	right: 0;
 	color: #333;
-	content: url(../images/icon/right-arrow.svg);
+	/* footer bacground note */
+	content: url();
 	width: 9px;
 }
 .nav-breadcrumb__item:last-child:before {
@@ -10745,7 +10737,8 @@ a.text-default {
 	font-size: 0.75rem;
 	text-align: center;
 	color: #fff;
-	background: url(../images/bg.footer.png) top no-repeat #333;
+	/* footer bacground note */
+	background: url() top no-repeat #333;
 	background-position-y: -19px;
 	position: relative;
 }
@@ -10798,9 +10791,18 @@ a.text-default {
 }
 .header-global__sp {
 	display: block;
-	background: #cd0c0d;
+	background-color: #35155d;
+	background-image: linear-gradient(180deg, #512b81 10%, #9f0d7f 100%);
+	background-size: cover;
 	margin: 0 -15px;
 }
+
+.header-toogle-left {
+	background-color: #35155d;
+	background-image: linear-gradient(180deg, #512b81 10%, #9f0d7f 100%);
+	background-size: cover;
+}
+
 @media (min-width: 992px) {
 	.header-global__sp {
 		display: none;
@@ -10919,7 +10921,7 @@ a.text-default {
 	}
 }
 .entry-member {
-	border: 1px solid #ffe8f4;
+	border: 1px solid #ffe17b;
 	border-radius: 5px;
 	padding: 5px;
 	margin-bottom: 10px;
@@ -10929,7 +10931,7 @@ a.text-default {
 	margin-bottom: 5px;
 }
 .entry-member__name {
-	background: #ffe8f4;
+	background: #ffe17b;
 	border-radius: 10px;
 	color: #ff005f;
 	line-height: 1;

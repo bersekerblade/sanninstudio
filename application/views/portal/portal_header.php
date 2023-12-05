@@ -38,7 +38,7 @@
         <div class="header-global__sp">
             <div class="container-fluid">
                 <div class="header-global__sp--content">
-                    <h1><a href="#">SANNIN STUDIO</a></h1>
+                    <h1><a href="#"><img src="/assets/img/logo-sannin.png" alt="Sannin Studio logo" style="width: 50px;"></a></h1>
                     <div class="header-global__sp--content__hamburger">
                         <a id="sidebar-left-trigger" href="#"><svg class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
                                 <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
@@ -58,8 +58,8 @@
             <ul class="nav-global__list d-flex align-items-center justify-content-between">
                 <li class="nav-global__item"><a href="<?= base_url('portal'); ?>">NEWS</a></li>
                 <li class="nav-global__item"><a href="#">CLIENT</a></li>
-                <li class="nav-global__item"><a href="#">MEMBER</a></li>
-                <li class="nav-global__item"><a href="#">LOCATION</a></li>
+                <li class="nav-global__item"><a href="<?= base_url('portal/staff'); ?>">STAFF</a></li>
+                <li class="nav-global__item"><a href="#">ABOUT US</a></li>
             </ul>
         </div>
     </nav>

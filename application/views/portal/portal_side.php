@@ -1,4 +1,4 @@
-<div class="col-lg-3 order-2 order-lg-2 entry-contents__nav-area">
+<div class="col-lg-3 order-2 order-lg-1 entry-contents__nav-area">
     <div class="entry-nav">
         <h2 class="entry-nav__title">News</h2>
         <div class="entry-nav__inner">
