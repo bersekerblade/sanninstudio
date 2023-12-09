@@ -1,16 +1,23 @@
-<div class="container mt-3">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    <?= $page_title; ?>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title"><?= $tbl_article['title']; ?></h5>
-                    <p class="card-text"><?= $tbl_article['content']; ?></p>
-                    <a href="<?= base_url('article'); ?>" class="btn btn-primary">Go Back</a>
-                </div>
-            </div>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="card shadow border-left-warning">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-secondary"><?= $tbl_article['title']; ?></h6>
+            <h6 class="d-inline-block m-0 font-weight-bold text-info badge">
+                <?= $page_title; ?>
+            </h6>
         </div>
+        <div class="card-body">
+            <!-- S Page body -->
+
+            <p class="card-text"><?= $tbl_article['content']; ?></p>
+            <hr>
+            <a href="<?= base_url('article'); ?>" class="btn btn-primary btn-sm">Go Back</a>
+
+            <!-- E Page body -->
+        </div>
+
     </div>
-</div>
+    <!-- /.container-fluid -->

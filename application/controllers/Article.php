@@ -107,9 +107,13 @@ class Article extends CI_Controller
     public function detail($id)
     {
         $data['page_title'] = 'Detail Article';
+        $data['user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
+
         $data['tbl_article'] = $this->Article_model->getArticleById($id);
 
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
         $this->load->view('article/detail', $data);
         $this->load->view('templates/footer');
     }
