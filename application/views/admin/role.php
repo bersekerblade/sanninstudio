@@ -41,7 +41,7 @@
                                                     <a href="#" class="btn btn-success btn-circle btn-sm disabled" title="Edit Role"><i class="fas fa-edit"></i></a>
                                                     <a href="#" class="btn btn-danger btn-circle btn-sm disabled" title="Edit Menu"><i class="fas fa-trash"></i></a>
                                                 <?php else : ?>
-                                                    <a href="#" class="btn btn-success btn-circle btn-sm" title="Edit Role"><i class="fas fa-edit"></i></a>
+                                                    <a href="#" class="btn btn-success btn-circle btn-sm" title="Edit Role" data-toggle="modal" data-target="#newRoleModalEdit"><i class="fas fa-edit"></i></a>
                                                     <a href="#" class="btn btn-danger btn-circle btn-sm" title="Edit Menu"><i class="fas fa-trash"></i></a>
                                                 <?php endif; ?>
                                             </td>
@@ -66,7 +66,7 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- modal start  -->
+<!-- modal add role start  -->
 <div class="modal fade" id="newRoleModal" tabindex="-1" aria-labelledby="newRoleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -91,4 +91,31 @@
         </div>
     </div>
 </div>
-<!-- modal end  -->
+<!-- modal add role end  -->
+
+<!-- modal edit role start  -->
+<div class="modal fade" id="newRoleModalEdit" tabindex="-1" aria-labelledby="newRoleModalEditLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newRoleModalEditLabel">Edit Role</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('admin/roleedit'); ?>" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Role Name</label>
+                        <input type="text" name="role" id="role" class="form-control" value="<?= $role_edit['role']; ?>" placeholder="edit role name...">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- modal edit role end  -->

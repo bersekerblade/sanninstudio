@@ -8,6 +8,8 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         is_logged_in();
+
+        $this->load->model('Admin_model', 'admin');
     }
 
     public function index()
@@ -29,11 +31,26 @@ class Admin extends CI_Controller
 
         $data['role'] = $this->db->get('tbl_user_role')->result_array();
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('admin/role', $data);
-        $this->load->view('templates/footer');
+        $this->form_validation->set_rules('role', 'Role Name', 'required');
+
+        // add role togle 
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('admin/role', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->admin->addRole();
+            $this->session->set_flashdata('alert', 'Role Success Added!');
+
+            redirect('admin/role');
+        }
+    }
+
+    public function roleEdit()
+    {
+        // menu edit 
     }
 
     public function roleAccess($role_id)
