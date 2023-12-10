@@ -87,4 +87,18 @@ class Portal extends CI_Controller
         $this->load->view('portal/portal_side');
         $this->load->view('portal/portal_footer');
     }
+
+    public function home()
+    {
+        $data['page_title'] = 'Home';
+        $config['total_rows'] = $this->Article_model->countAllArticleByPortal();
+        $config['per_page'] = 5;
+
+        $data['start'] = $this->uri->segment(3);
+        $data['tbl_article'] = $this->Article_model->getArticleByPortal($config['per_page'], $data['start']);
+
+        $this->load->view('portal/portal_header');
+        $this->load->view('portal/portal_home', $data);
+        $this->load->view('portal/portal_footer');
+    }
 }

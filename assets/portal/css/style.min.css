@@ -2436,27 +2436,27 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus {
-	box-shadow: 0 0 0 0.2rem rgba(205, 12, 13, 0.5);
+	box-shadow: 0 0 0 0.2rem #fd8d14;
 }
 .btn-outline-primary {
-	color: #cd0c0d;
-	border-color: #cd0c0d;
+	color: #fd8d14;
+	border-color: #fd8d14;
 }
 .btn-outline-primary:hover {
-	background-color: #cd0c0d;
-	border-color: #cd0c0d;
+	background-color: #fd8d14;
+	border-color: #fd8d14;
 }
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
-	color: #cd0c0d;
+	color: #fd8d14;
 	background-color: transparent;
 }
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .show > .btn-outline-primary.dropdown-toggle {
 	color: #fff;
-	background-color: #cd0c0d;
-	border-color: #cd0c0d;
+	background-color: #fd8d14;
+	border-color: #fd8d14;
 }
 .btn-outline-secondary.focus,
 .btn-outline-secondary:focus,
@@ -9502,7 +9502,7 @@ svg a:hover {
 }
 @media (min-width: 992px) {
 	.frame {
-		padding-top: 4rem;
+		padding-top: 1rem;
 		padding-bottom: 4rem;
 	}
 	.fluid-mobile {
@@ -10398,7 +10398,7 @@ a.text-default {
 }
 .section-title-home {
 	text-align: center;
-	color: #cd0c0d;
+	color: #fd8d14;
 	margin-bottom: 40px;
 	font-weight: 700;
 }
@@ -11148,7 +11148,7 @@ a.text-default {
 	font-weight: 400;
 }
 .entry-home__news {
-	border-bottom: 1px dotted #ff89b5;
+	border-bottom: 1px dotted #fd8d14;
 	padding-bottom: 15px;
 	margin-bottom: 15px;
 }
