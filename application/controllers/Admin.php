@@ -48,9 +48,34 @@ class Admin extends CI_Controller
         }
     }
 
-    public function roleEdit()
+    public function editRole($id)
     {
-        // menu edit 
+        $data['page_title'] = 'Edit Role';
+        $data['user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $data['tbl_user_role'] = $this->admin->getRoleById($id);
+        $this->form_validation->set_rules('role', 'Role Name', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('admin/role', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->admin->editRole();
+            $this->session->set_flashdata('alert', 'Role Success Added!');
+
+            redirect('admin/role');
+        }
+    }
+
+    public function deleteRole($id)
+    {
+        $this->admin->deleteRole($id);
+        $this->session->set_flashdata('alert', 'Role Success Deleted!');
+
+        redirect('admin/role');
     }
 
     public function roleAccess($role_id)

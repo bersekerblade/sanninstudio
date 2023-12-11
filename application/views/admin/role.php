@@ -39,10 +39,10 @@
                                                 <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="btn btn-warning btn-circle btn-sm" title="Role Access"><i class="fas fa-wrench"></i></a>
                                                 <?php if ($r['role'] == "Administrator") : ?>
                                                     <a href="#" class="btn btn-success btn-circle btn-sm disabled" title="Edit Role"><i class="fas fa-edit"></i></a>
-                                                    <a href="#" class="btn btn-danger btn-circle btn-sm disabled" title="Edit Menu"><i class="fas fa-trash"></i></a>
+                                                    <a href="#" class="btn btn-danger btn-circle btn-sm disabled" title="Delete Role"><i class="fas fa-trash"></i></a>
                                                 <?php else : ?>
-                                                    <a href="#" class="btn btn-success btn-circle btn-sm" title="Edit Role" data-toggle="modal" data-target="#newRoleModalEdit"><i class="fas fa-edit"></i></a>
-                                                    <a href="#" class="btn btn-danger btn-circle btn-sm" title="Edit Menu"><i class="fas fa-trash"></i></a>
+                                                    <a href="<?= base_url('admin/editrole'); ?>/<?= $r['id']; ?>" class="btn btn-success btn-circle btn-sm" title="Edit Role" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?= base_url('admin/deleterole'); ?>/<?= $r['id']; ?>" class="btn btn-danger btn-circle btn-sm" title="Delete Role" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i></a>
                                                 <?php endif; ?>
                                             </td>
                                         </tr>
@@ -94,7 +94,7 @@
 <!-- modal add role end  -->
 
 <!-- modal edit role start  -->
-<div class="modal fade" id="newRoleModalEdit" tabindex="-1" aria-labelledby="newRoleModalEditLabel" aria-hidden="true">
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="newRoleModalEditLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -107,7 +107,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Role Name</label>
-                        <input type="text" name="role" id="role" class="form-control" value="<?= $role_edit['role']; ?>" placeholder="edit role name...">
+                        <input type="text" name="role" id="role" class="form-control" placeholder="edit role name..." value="<?= $r['role']; ?>">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -119,3 +119,23 @@
     </div>
 </div>
 <!-- modal edit role end  -->
+
+<!-- delete modal start  -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Are you sure want to delete <?= $r['role']; ?> role?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Delete" sure want to delete this role.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="<?= base_url('admin/deleterole'); ?>/<?= $r['id']; ?>">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- delete modal end  -->
