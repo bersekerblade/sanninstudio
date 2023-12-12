@@ -30,7 +30,7 @@
                 </div>
                 <div class="header-global__pc--menu">
                     <div class="header-global__pc--menu__user">
-                        <a href="<?= base_url('auth'); ?>">Login</a> / <a href="<?= base_url('auth/registration'); ?>">Register</a>
+                        <!-- <a href="<?= base_url('auth'); ?>">Login</a> / <a href="<?= base_url('auth/registration'); ?>">Register</a> -->
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                             </svg><!-- <i class="fas fa-bars"></i> Font Awesome fontawesome.com --></a>
                     </div>
                     <div class="header-global__sp--content__menu">
-                        <p><a href="#">Login</a> | <a href="#">Register</a></p>
+                        <!-- <p><a href="#">Login</a> | <a href="#">Register</a></p> -->
                     </div>
                 </div>
             </div>
@@ -57,6 +57,7 @@
     <nav class="nav-global">
         <div class="container">
             <ul class="nav-global__list d-flex align-items-center justify-content-between">
+                <li class="nav-global__item"><a href="<?= base_url('portal/home'); ?>">HOME</a></li>
                 <li class="nav-global__item"><a href="<?= base_url('portal'); ?>">NEWS</a></li>
                 <li class="nav-global__item"><a href="#">CLIENT</a></li>
                 <li class="nav-global__item"><a href="<?= base_url('portal/staff'); ?>">STAFF</a></li>

@@ -17,21 +17,22 @@
             <!-- <div class="font-weight-bold h3 m-0">MENU</div> -->
         </div>
         <ul id="accordion" class="accordion sidebar__list">
+            <li class="sidebar__item"><a href="<?= base_url('portal/home'); ?>">HOME</a></li>
             <li class="sidebar__item"><a href="<?= base_url('portal'); ?>">NEWS</a></li>
             <li class="sidebar__item"><a href="#">CLIENT</a></li>
             <li class="sidebar__item"><a href="<?= base_url('portal/staff'); ?>">STAFF</a></li>
             <li class="sidebar__item"><a href="#">ABOUT US</a></li>
         </ul>
         <div class="sidebar__user">
-            <img src="#">
-            <p><a href="https://jkt48.com/login?lang=id">Login</a> | <a href="#">Register</a></p>
+            <!-- <img src="#"> -->
+            <!-- <p><a href="#">Login</a> | <a href="#">Register</a></p> -->
         </div>
         <div class="sidebar__language">
             <div>
-                <a href="https://jkt48.com/news/list?lang=id"><img src="#"><span>INDONESIAN</span></a>
+                <!-- <a href="#"><img src="#"><span>INDONESIAN</span></a> -->
             </div>
             <div>
-                <a href="https://jkt48.com/news/list?lang=jp"><img src="#"><span>日本語</span></a>
+                <!-- <a href="#"><img src="#"><span>日本語</span></a> -->
             </div>
         </div>
     </div>

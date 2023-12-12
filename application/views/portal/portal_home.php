@@ -27,7 +27,7 @@
 <!-- sannin header map start -->
 
 <!-- start news  -->
-<section class="frame">
+<section class="frame pt-0">
     <div class="container">
         <h6 class="section-title-home mb-0 mt-0">NEWS</h6>
         <div class="row">

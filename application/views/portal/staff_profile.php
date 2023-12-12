@@ -12,20 +12,20 @@
         <div class="row row-all-10">
             <div class="col-4 col-lg-2">
                 <div class="entry-member">
-                    <a href="#"><img src="/assets/portal/images/Hendry ID Card.jpg" alt="Amanda Sukma"></a>
-                    <p class="entry-member__name"><a href="#">Hendry<br>Sukma</a></p>
+                    <a href="#"><img src="/assets/portal/images/Hendry ID Card - SNES.jpg" alt=""></a>
+                    <p class="entry-member__name"><a href="#">Hendry<br>Fajar</a></p>
                 </div>
             </div>
             <div class="col-4 col-lg-2">
                 <div class="entry-member">
-                    <a href="#"><img src="/assets/portal/images/Faiz ID Card.jpg" alt="Adzana Shaliha"></a>
-                    <p class="entry-member__name"><a href="#">Faiz<br>Shaliha</a></p>
+                    <a href="#"><img src="/assets/portal/images/Faiz ID Card - SNES.jpg" alt=""></a>
+                    <p class="entry-member__name"><a href="#">Faizal<br>Syahrullah</a></p>
                 </div>
             </div>
             <div class="col-4 col-lg-2">
                 <div class="entry-member">
-                    <a href="#"><img src="/assets/portal/images/Harto ID Card.jpg" alt="Amanda Sukma"></a>
-                    <p class="entry-member__name"><a href="#">Harto<br>Amanda</a></p>
+                    <a href="#"><img src="/assets/portal/images/Harto ID Card - SNES.jpg" alt=""></a>
+                    <p class="entry-member__name"><a href="#">Harto<br>Tri Mulyo</a></p>
                 </div>
             </div>
         </div>
