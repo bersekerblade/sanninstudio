@@ -2441,10 +2441,22 @@ fieldset:disabled a.btn {
 .btn-outline-primary {
 	color: #fd8d14;
 	border-color: #fd8d14;
+
+	background-image: url("/assets/img/lofi-login.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	padding: 10px 20px;
+	border: none; /* Hilangkan batas tombol */
+	text-align: center; /* Pusatkan teks di dalam tombol */
+	text-decoration: none; /* Hapus garis bawah pada teks jika diinginkan */
+	display: inline-block; /* Agar tombol memiliki ukuran yang sesuai dengan kontennya */
+	cursor: pointer;
 }
 .btn-outline-primary:hover {
 	background-color: #fd8d14;
 	border-color: #fd8d14;
+	opacity: 0.8;
 }
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {

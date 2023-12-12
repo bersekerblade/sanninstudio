@@ -16,6 +16,7 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/portal/'); ?>css/style.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/portal/'); ?>css/portal.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/portal/css/water.css'); ?>">
 </head>
 
 <body>

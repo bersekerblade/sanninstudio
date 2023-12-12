@@ -101,4 +101,12 @@ class Portal extends CI_Controller
         $this->load->view('portal/portal_home', $data);
         $this->load->view('portal/portal_footer');
     }
+
+    public function water()
+    {
+        $data['page_title'] = 'water';
+
+
+        $this->load->view('portal/water', $data);
+    }
 }
